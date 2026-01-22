@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="../assets/background.jpg" alt="header" class="header-pic">
+    </div>
+    <div class="form-container">
+        <div class="reservation-details">
+            <h2>Hotel Reservation Form</h2>
+            <p>
+            Welcome! Kindly fill out the form below to reserve your stay. 
+            Provide your contact details, preferred dates, and room selection 
+            to help us prepare a comfortable experience for you.
+            </p>
+
+            <form action="#" method="post" class="reservation-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+
+                <label for="datestart">Check in Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="dateend">Check out Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+
+                <label for="roomtype">Room Type:</label>
+                <select id="roomtype" name="roomtype" class="room-type" required>
+                    <option value="single">Single Room</option>
+                    <option value="double">Double Room</option>
+                    <option value="suite">Suite</option>
+                </select>
+
+
+                <table>
+                <tr>
+                    
+                    <th>Room Type</th>
+                    <th>Price per Night</th>
+                    <th>Max Guests</th>
+                </tr>
+
+                <tr>
+                    
+                    <td>Single Room</td>
+                    <td>₱2,000</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    
+                    <td>Double Room</td>
+                    <td>₱3,500</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    
+                    <td>Deluxe Room</td>
+                    <td>₱5,000</td>
+                    <td>4</td>
+                </tr>
+                </table>
+
+
+                <label for="requests">Special Requests:</label>
+                <textarea id="requests" name="requests" rows="4"></textarea>
+
+                <label for="payment">Payment Method:</label>
+                <select id="payment" name="payment" class="payment-method" required>
+                    <option value="creditcard">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="banktransfer">Bank Transfer</option>
+                </select>
+
+                <input type="submit" value="Submit Reservation" class="submit-button">
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
