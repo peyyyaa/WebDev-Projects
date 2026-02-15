@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Quest Level</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="queststyle.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffdbfa 0%, #ffffff 100%);
+        }
+        .badge {
+            background-color: #ff8bc5;
+            border-radius: 20px;
+            margin-bottom:5px;
+        }
+        .btn-primary {
+            background-color: #ff8bc5;
+            border-color: #ff8bc5;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background-color: #ff6f9c;
+            border-color: #ff6f9c;
+           
+        }
+        .card {
+            border: #d4d4d4 1px solid;
+            box-shadow: 5px 5px 5px -4px #cfcfcf;
+            border-radius: 20px;
+        }
+        
+        .btn {
+            border-radius: 10px;
+        }
+
+        .btn-secondary {
+            background-color: #c5c5c5;
+            border-color: #c5c5c5;
+            color: #ffffff;
+        }
+        .btn-secondary:hover {
+            background-color: #a8a8a8;
+            border-color: #a8a8a8;
+        }
+        .row {
+            height: 100vh;
+        }
+
+
+    </style>
+    </head>
+
+    <body>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card ">
+                        <div class="card-body">
+                            <span class="badge ">Level 5</span>
+                            <h5 class="card-title">Counter: Coins</h5>
+                            <p class="card-text">Use + and - buttons. Coins cannot go below 0.</p>
+                            <div class="counter d-flex align-items-center justify-content-between">
+                            <button class="btn btn-secondary" id="decreaseBtn">-1</button>
+                            <span id="coinCount" class="mx-5">0</span>
+                            <button class="btn btn-primary" id="increaseBtn">+1</button>
+                        
+                            </div>
+                            
+                            <hr>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-secondary w-50 " onclick="window.location.href='level4.html'">Back</button>
+                                <button class="btn btn-primary  w-50" onclick="window.location.href='level6.html'">Next Level</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const decreasebtn = document.getElementById("decreaseBtn");
+            const increasebtn = document.getElementById("increaseBtn");
+            const coinCount = document.getElementById("coinCount");
+
+            decreasebtn.addEventListener("click", () => {
+                let count = parseInt(coinCount.textContent);
+                if (count > 0) {
+                    count--;
+                    coinCount.textContent = count;
+                }
+            });
+            increasebtn.addEventListener("click", () => {
+                let count = parseInt(coinCount.textContent);
+                count++;
+                coinCount.textContent = count;
+            });
+
+        </script>
+
+        
+        
+    </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Quest Level</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="queststyle.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffdbfa 0%, #ffffff 100%);
+        }
+        .badge {
+            background-color: #ff8bc5;
+            border-radius: 20px;
+            margin-bottom:5px;
+        }
+        .btn-primary {
+            background-color: #ff8bc5;
+            border-color: #ff8bc5;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background-color: #ff6f9c;
+            border-color: #ff6f9c;
+           
+        }
+        .card {
+            border: #d4d4d4 1px solid;
+            box-shadow: 5px 5px 5px -4px #cfcfcf;
+            border-radius: 20px;
+        }
+        
+        .btn {
+            border-radius: 10px;
+        }
+
+        .btn-secondary {
+            background-color: #c5c5c5;
+            border-color: #c5c5c5;
+            color: #ffffff;
+        }
+        .btn-secondary:hover {
+            background-color: #a8a8a8;
+            border-color: #a8a8a8;
+        }
+        .row {
+            height: 100vh;
+        }
+        .doorcard:hover {
+            transform: scale(1.01);
+            transition: 0.2s;
+        }
+        .card-img-top {
+            width: 100%;          /* Make it fill card width */
+            height: 400px;        /* Fixed height for all cards */
+            object-fit: cover;    /* Keeps aspect ratio, crops if needed */
+        }
+        .alert {
+            margin-top: 15px;
+        }
+
+
+
+
+    </style>
+    </head>
+
+    <body>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-10">
+                    <div class="card ">
+                        <div class="card-body">
+                            <span class="badge ">Level 6</span>
+                            <h5 class="card-title">Conditionals: Pick the Correct Door</h5>
+                            <p class="card-text">Click a door. Only one is correct. Use if/else.</p>
+                            <div class="d-flex gap-2 justify-content-center">
+                                <div class="doorcard card" style="width: 18rem;">
+                                    <img src="Door1.jpg" id="door1" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Door 1</p>
+                                    </div>
+                                </div>
+                                <div class="doorcard card" style="width: 18rem;">
+                                    <img src="Door2.jpg" id="door2" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Door 2</p>
+                                    </div>
+                                </div>
+                                <div class="doorcard card" style="width: 18rem;">
+                                    <img src="Door3.jpg" id="door3" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text">Door 3</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-light" id="resultAlert" role="alert">
+                                Pick a door to see your fate.
+                            </div>
+                            <hr>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-secondary w-50 " onclick="window.location.href='level4.html'">Back</button>
+                                <button class="btn btn-primary  w-50" onclick="window.location.href='level1.html'">Restart(Level 1)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const doors = document.querySelectorAll('.doorcard');
+            const resultAlert = document.getElementById("resultAlert");
+            doors.forEach((door, index) => {
+                door.addEventListener('click', () => {
+                    const d1=document.getElementById("door1");
+                    const d2=document.getElementById("door2");
+                    const d3=document.getElementById("door3");
+                    if (index === 0) {
+                        d1.src ="hell.jpg";
+                        resultAlert.className = "alert alert-danger";
+                        resultAlert.textContent="🔥 You entered the door to hell! Game over. Try again.";
+                    }else if (index === 1) {
+                        d2.src ="success.jpg";
+                        resultAlert.className = "alert alert-success";
+                        resultAlert.textContent="🎉 Congratulations! You found the treasure and won the game!";
+                    } else {
+                        d3.src ="lion.jpg";
+                        resultAlert.className = "alert alert-danger";
+                        resultAlert.textContent="👹 A hungry lion got you! Game over. Try again.";
+                    }
+                });
+            });
+        </script>
+        
+
+        
+        
+    </body>
+</html>
